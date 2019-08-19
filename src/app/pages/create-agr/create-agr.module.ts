@@ -9,6 +9,7 @@ import { CreateAgrPage } from './create-agr.page';
 import { TierSelComComponent } from 'src/app/components/tier-sel-com/tier-sel-com.component';
 import { FooterAgrComponent } from 'src/app/components/footer-agr/footer-agr.component';
 import { ItemAgrComponent } from 'src/app/components/item-agr/item-agr.component';
+import { HeaderAgrComponent } from 'src/app/components/header-agr/header-agr.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [CreateAgrPage,TierSelComComponent,FooterAgrComponent,
-                 ItemAgrComponent]
+                 ItemAgrComponent,HeaderAgrComponent]
 })
 export class CreateAgrPageModule {}
