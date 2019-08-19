@@ -1,0 +1,20 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>tiesel</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+</ion-content> -->
+<ion-card>
+    <ion-card-header (click)="toggletier()"class="blue headfont headw"> 
+      <label class="txtcenter">Attachments</label>
+       <ion-icon style="float: right;"name="arrow-dropdown"></ion-icon>
+    </ion-card-header>
+      <ion-card-content #tierCC class="cardCon"[hidden]="hide" >
+      <!-- <ion-button expand="full" color="light" (click)="addControl()">Add Tier -->
+        <label >Add attachment</label> <br>
+        <ion-input type="file" (ionChange)= "getFileName($event)"></ion-input>
+      </ion-card-content>
+    </ion-card>
+          
