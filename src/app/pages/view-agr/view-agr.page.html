@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>View Agreement</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaulthref="/AMS-Home" routerDirection="back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    <ion-card>
+      <ion-row>
+        <ion-col>
+          <label>Agreement Type</label>
+          <ion-input placeholder="Volume Agreemnt" disabled="true"></ion-input>
+        </ion-col>
+        <ion-col>
+          <label>Vendor</label>
+          <ion-select multiple="false" [(ngModel)]="selectedVendor" placeholder="Enter Vendor Name"
+            (ionChange)="SetSelectedVendor($event)">
+            <ion-select-option *ngFor="let data of vendordata" value="{{data.VendorNumber}}">
+              {{ data.VendorNumber + ' ' + data.VendorDescription }}
+            </ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button (click)="showdetail()">Show Detail</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+
+  <ion-card>
+    <ion-grid>
+      <ion-row class="fontcolor fbold">
+        <ion-col>Agreement Number</ion-col>
+        <ion-col>Currency</ion-col>
+        <!-- <ion-col>Valid From</ion-col>
+          <ion-col>Valid To</ion-col> -->
+        <ion-col>Calculation Basis</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let data of Agrdata" (click)="getAgr(data)">
+        <ion-col>{{data.AgrNum}}</ion-col>
+        <ion-col>{{data.SettlCurrency}}</ion-col>
+        <!-- <ion-col>{{data.ValidFrom}}</ion-col>
+            <ion-col>{{data.ValidTo}}</ion-col> -->
+        <ion-col>{{data.CalcBasis}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Agreement Number : {{agreement}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaulthref="/AMS-Home"
+        routerDirection="back"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+      <ion-toolbar>
+      <ion-grid>
+          <ion-row class="fontcolor fbold">
+              <ion-col  size = "2" >
+                Bucket ID
+                </ion-col>
+                <ion-col size = "2" >
+                Transaction ID
+                </ion-col>
+              <ion-col size = "2" >
+                Sales Quantity
+            </ion-col>
+            <ion-col size = "2" >
+              Sales Amount
+          </ion-col>
+          <ion-col size = "2" >
+            Rebate
+        </ion-col>
+              </ion-row>
+      </ion-grid>
+    <ion-grid>
+      <ion-row *ngFor="let accr of accrualitem">
+        <ion-col size = "2" >
+          {{accr.BucketId}}
+        </ion-col>
+        <ion-col size = "2" >
+          {{accr.Transactionid}}
+        </ion-col>
+      <ion-col size = "2" >
+          {{accr.Salesquantity}}
+    </ion-col>
+    <ion-col size = "2" >
+      {{accr.Salesamount}}
+    </ion-col>
+    <ion-col size = "2" >
+      {{accr.Rebate}}
+</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+  </ion-card>
+  
+  </ion-content>

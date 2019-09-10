@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Sales Number : {{trnum}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaulthref="/AMS-Home" routerDirection="back"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row class="fontcolor fbold">
+          <ion-col size="2">
+            Sales ID
+          </ion-col>
+          <ion-col size="2">
+            Item Number
+          </ion-col>
+          <ion-col size="2">
+            Sales Amount
+          </ion-col>
+          <ion-col size="2">
+            Sales Quantity
+          </ion-col>
+          <ion-col size="2">
+            Store
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row *ngFor="let tr of tritem">
+          <ion-col size="2">
+            {{tr.Trid}}
+          </ion-col>
+          <ion-col size="2">
+            {{tr.Itemnum}}
+          </ion-col>
+          <ion-col size="2">
+            {{tr.Salesamt}}
+          </ion-col>
+          <ion-col size="2">
+            {{tr.Salesquan}}
+          </ion-col>
+          <ion-col size="2">
+            {{tr.Storeid}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-card>
+</ion-content>

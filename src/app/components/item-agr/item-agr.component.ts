@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, Renderer } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { GlobalVarService } from 'src/app/Services/global-var.service';
 
 @Component({
   selector: 'app-item',
@@ -11,43 +12,29 @@ export class ItemAgrComponent implements OnInit {
   hide = true;
   rows:any 
   item:any
-
+  activated = "item"
   @ViewChild("itemCC",{static: true}) itemcardcon: any;
   constructor( public render : Renderer,
-    private alertCtrl: AlertController) { 
+    private alertCtrl: AlertController,
+    public global: GlobalVarService) { 
       this.rows = []
     }
 
   ngOnInit() {}
   // this.toggle = this.global.getTogGleVariable()
-  toggleitem(){
-  if(this.toggle)
-  {
-    this.render.setElementStyle(this.itemcardcon.el,"max-height",'0px');
-  }else{
-    this.render.setElementStyle(this.itemcardcon.el,"max-height",'500px');
-  }
-  this.toggle = !this.toggle;
-  this.hide = !this.hide;
-  // this.attachpage.collExp(this.toggle);
-  //set the toggle variable for review part
-  // this.global.setToGlobalVariable(this.toggle)
-  //  this.global.SetToggle(this.tiercardcon.el);
+  toggleitem(){  
+   this.hide = !this.hide;
+   this.global.SetToggle(this.itemcardcon.el,this.render,this.toggle,this.activated,this.hide);
 }
 add()
   {
     this.rows.push({});
     
   };
-  del()
+  del(i)
   {
-  let i1 : number ;
-  for(var i = 0 ; i<this.rows.length; i++) 
-  {
-   if(this.rows[i].check == true) {
-     this.rows.splice(i , 1) ;
-    }
-  }
+  
+  this.rows.splice(i , 1) ;
   };
   async selitem() {
     let prompt = await this.alertCtrl.create({

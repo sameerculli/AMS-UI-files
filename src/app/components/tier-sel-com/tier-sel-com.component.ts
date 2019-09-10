@@ -10,12 +10,13 @@ import { FooterAgrComponent } from '../footer-agr/footer-agr.component';
   styleUrls: ['./tier-sel-com.component.scss'],
 })
 export class TierSelComComponent implements OnInit {
- toggle = false;
+ tiertoggle = false;
  public myForm: FormGroup;
  public myformArray : FormArray;
   private UiCount: number = 1;
   public hide = true;
   rows:any 
+  activated = "tier"
  @ViewChild("tierCC",{static: true}) tiercardcon: any;
   constructor( public render: Renderer, public global : GlobalVarService,
     // public attachpage : FooterAgrComponent
@@ -29,21 +30,11 @@ export class TierSelComComponent implements OnInit {
     // console.log(this.tiercardcon)
     
   }
-  toggletier(){
-   this.toggle = this.global.getTogGleVariable()
-    if(this.toggle)
-    {
-      this.render.setElementStyle(this.tiercardcon.el,"max-height",'0px');
-    }else{
-      this.render.setElementStyle(this.tiercardcon.el,"max-height",'500px');
-    }
-    this.toggle = !this.toggle;
-    this.hide = !this.hide;
-    // this.attachpage.collExp(this.toggle);
-    //set the toggle variable for review part
-    // this.global.setToGlobalVariable(this.toggle)
-    //  this.global.SetToggle(this.tiercardcon.el);
+  toggletier(){    
+   this.hide = !this.hide;
+   this.global.SetToggle(this.tiercardcon.el,this.render,this.tiertoggle,this.activated,this.hide);
   }
+ 
   addControl(){
     this.rows.push({});
   }

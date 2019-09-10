@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Sales Detail</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaulthref="/AMS-Home"
+        routerDirection="back"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <ion-grid>
+    <ion-row class="fontcolor fbold">
+      <ion-col size="2">
+        Sales Type
+      </ion-col>
+      <ion-col size="2">
+        Sales Number
+      </ion-col>
+      <ion-col size="2">
+        Currency
+      </ion-col>
+      <ion-col size="2">
+       Partner
+      </ion-col>
+      <ion-col size="2">
+        Sales Amount
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row *ngFor="let tr of trheader" (click)="gettrheader($event,tr)">
+      <ion-col size="2">
+        <ion-label >
+          {{ tr.Trtype }}
+        </ion-label>
+      </ion-col>
+      <ion-col size="2">
+        {{ tr.Trid }}
+      </ion-col>
+      <ion-col size="2">
+        {{ tr.Trcurr }}
+      </ion-col>
+      <ion-col size="2">
+        {{ tr.Trparty }}
+      </ion-col>
+      <ion-col size="2">
+        {{ tr.Salesamt }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
+</ion-content>

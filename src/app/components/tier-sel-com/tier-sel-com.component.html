@@ -13,9 +13,7 @@
    <ion-icon style="float: right;"name="arrow-dropdown"></ion-icon>
 </ion-card-header>
   <ion-card-content #tierCC class="cardCon"[hidden]="hide" >
-  <!-- <ion-button expand="full" color="light" (click)="addControl()">Add Tier -->
     <span class="txtcenter">Add tier</span>
-    <!-- <ion-icon slot="icon-only" style="float: right;" name ="add" (click)="addControl()"></ion-icon> -->
     <ion-list>
       <ion-row *ngFor="let row of rows ; let i = index ">
         <ion-col ion-col size = "4" >
@@ -29,11 +27,10 @@
             <ion-input [(ngModel)] ="row.tierrate" required type="number" placeholder="Tier Rate" class="custom-input"></ion-input>
         </ion-col>
         <ion-col size = "1" >
-        <!-- <ion-checkbox [(ngModel)]="row.check" placeholder= "Selected"></ion-checkbox> -->
         <ion-icon (click)="removeControl(i)" name="close-circle"></ion-icon>
       </ion-col>
       </ion-row>
-      <ion-button  color="primary" (click)="addControl()">Add Tier</ion-button>
+      <ion-button  (click)="addControl()">Add Tier</ion-button>
       </ion-list>
   </ion-card-content>
 </ion-card>

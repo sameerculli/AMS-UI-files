@@ -21,14 +21,12 @@
            <ion-col size = "2" >
             <ion-datetime value=" " placeholder="ValidTo"></ion-datetime>
              </ion-col>
-             <ion-col size = "2" >
-                <ion-checkbox [(ngModel)]="row.check" placeholder= "Selected"></ion-checkbox>
-              </ion-col>
+              <ion-col size = "1" >
+                  <ion-icon (click)="del(i)" name="close-circle"></ion-icon>
+               </ion-col>
         </ion-row>
         
         </ion-list>
-        <ion-button (click) = "add(row)" size="small">Add</ion-button>
-        <ion-button (click) = "del(row)" size="small">Delete</ion-button>
-    
+        <ion-button (click) = "add()" size="small">Add</ion-button>    
     </ion-card-content>
   </ion-card>

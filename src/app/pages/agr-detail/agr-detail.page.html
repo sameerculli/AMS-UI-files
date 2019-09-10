@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <!-- <ion-title>Agreemnet Detail</ion-title> -->
+    <ion-buttons slot="start">
+      <ion-back-button defaulthref="/AMS-Home" routerDirection="back"></ion-back-button>
+    </ion-buttons>
+    <ion-label>Agreemnet Number : {{agreement}}</ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- Agreemnet item -->
+  <ion-card>
+  <!-- <ion-card-header>
+    <span class="txtcenter1">Item</span>
+  </ion-card-header> -->
+    <ion-grid >
+      <ion-row class="fontcolor fbold">
+        <ion-col>Department</ion-col>
+        <ion-col>Item Number</ion-col>
+        <!-- <ion-col></ion-col> -->
+      </ion-row>
+      <ion-row *ngFor ="let data of agritem">
+        <ion-col>{{data.Department}}</ion-col>
+        <ion-col>{{data.ItemNumber}}</ion-col>
+        <!-- <ion-col></ion-col> -->
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <!-- Agreemnet tiers -->
+  <ion-card>
+    <ion-grid>
+      <ion-row class="fontcolor fbold">
+        <ion-col>Sequence</ion-col>
+        <ion-col>From Value</ion-col>
+        <ion-col>To Value</ion-col>
+        <ion-col>Rate</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let data of agrtier">
+        <ion-col>{{data.TierSequence}}</ion-col>
+        <ion-col>{{data.TierFrom}}</ion-col>
+        <ion-col>{{data.TierTo}}</ion-col>
+        <ion-col>{{data.TierRate}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <!-- Agreemnet stores -->
+  <ion-card>
+    <ion-grid>
+      <ion-row class="fontcolor fbold">
+        <ion-col>Store</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let data of agrstore">
+        <ion-col>{{data.StoreID}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

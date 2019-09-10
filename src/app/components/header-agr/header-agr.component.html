@@ -1,3 +1,96 @@
-<p>
-  header-agr works!
-</p>
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>tiesel</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+</ion-content> -->
+<ion-card>
+  <!-- <ion-card-header (click)="toggletier()"class="blue headfont headw"> 
+    <label class="txtcenter">Header Details</label>
+     <ion-icon style="float: right;"name="arrow-dropdown"></ion-icon>
+  </ion-card-header>
+    <ion-card-content #tierCC class="cardCon"[hidden]="hide" > -->
+      <!-- "ui star" -->
+      
+<ion-grid>
+    <ion-row >
+        <ion-col col-4>
+            <ion-label>Agreement Type </ion-label>
+            <ion-input [(ngModel)] ="agreement_type"  type="text" disabled="true"
+             placeholder="Enter Agreement type" class="custom-input" maxlength="4"></ion-input>
+          </ion-col>
+          <ion-col col-4>
+            <ion-label>Valid From </ion-label>
+            <ion-datetime [(ngModel)] ="valid_from"  placeholder="Enter Valid From"
+             class="custom-input" width = "10px" (ionChange)="ValidfromDate($event)" ></ion-datetime>
+             <!-- <ionic-calendar-date-picker (onSelect)="dateSelected($event)"></ionic-calendar-date-picker>	 -->
+             <!-- <ion-input type="" (click)="dateSelected($event)"></ion-input> -->
+          </ion-col>  
+          <ion-col col-4>            
+              <ion-label>Valid To </ion-label>
+            <ion-datetime [(ngModel)] ="valid_to"  type="date" 
+             placeholder="Enter Valid to" class="custom-input"(ionChange)="ValidtoDate($event)"></ion-datetime>
+          </ion-col>
+      </ion-row>
+      <ion-row >
+          <ion-col col-4>
+              <ion-label>Description </ion-label>
+              <ion-input [(ngModel)] ="agreement_desc"  type="text"  placeholder="Enter Description" 
+              class="custom-input"></ion-input>
+            </ion-col>
+            <!-- <ion-col col-4>
+              <ion-label>Country </ion-label>
+              <ion-input [(ngModel)] ="country"  placeholder="Enter Country" class="custom-input" type="text" ></ion-input>
+            </ion-col>   -->
+            <ion-col col-4>
+                <ion-label>Currency</ion-label>
+                <ion-input [(ngModel)] ="Currency"  disabled="true"placeholder="Enter Currency" class="custom-input" 
+                type="text" maxlength = 3></ion-input>
+            </ion-col> 
+            <ion-col col-4>
+                <ion-label>Calculation Basis</ion-label>
+              <ion-input [(ngModel)] ="calc_basis"  type="text"  placeholder="Enter Calculation Basis"
+              disabled="true" class="custom-input" maxlength = 1></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row >
+            <ion-col col-4>
+                <ion-label>Vendor </ion-label>
+                <!-- <ion-input [(ngModel)] ="vendor"  type="text"  
+                  placeholder="Enter Vendor Name" class="custom-input"></ion-input> -->
+                 <ion-select multiple="false" [(ngModel)]="selectedVendor"  placeholder="Enter Vendor Name"
+                   (ionChange)="SetSelectedVendor($event)">
+                   <ion-select-option *ngFor="let data of VendorData"value="{{data.VendorNumber}}">{{data.VendorNumber + ' ' + data.VendorDescription}}</ion-select-option>
+                </ion-select>
+              </ion-col>
+              <ion-col col-4>
+                <ion-label>Settlement Partner </ion-label>
+                <!-- <ion-input [(ngModel)] ="settl_partner"  placeholder="Enter Settlement Partner" class="custom-input" type="text" ></ion-input> -->
+                <ion-select multiple="false" [(ngModel)]="selectedpart"  placeholder="Enter Partner Number"
+                (ionChange)="SetSelectedpart($event)">
+                    <ion-select-option *ngFor="let data of PartnerData" value="{{data.VendorNumber}}">{{data.VendorNumber + ' ' + data.VendorDescription}}</ion-select-option>
+                 </ion-select>
+              </ion-col>  
+              <ion-col col-4>
+                  <ion-label>Settlement Calender</ion-label>
+                <ion-input [(ngModel)] ="calender"  type="text"  placeholder="Enter calender" class="custom-input"></ion-input>
+              </ion-col>
+          </ion-row>
+          <ion-row >
+              <!-- <ion-col col-4>
+                  <ion-label>Currency</ion-label>
+                  <ion-input [(ngModel)] ="Currency"  placeholder="Enter Currency" class="custom-input" type="text" maxlength = 3></ion-input>
+              </ion-col>   -->
+          </ion-row>
+          <!-- <ion-row >
+                <ion-col col-12>
+                    <ion-button class="btn">Next</ion-button>
+                </ion-col>  
+            </ion-row> -->
+  </ion-grid>
+  
+    <!-- </ion-card-content> -->
+  </ion-card>
+        

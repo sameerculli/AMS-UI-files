@@ -11,7 +11,6 @@
 
 /* Core CSS required for Ionic components to work properly */
 @import "~@ionic/angular/css/core.css";
-
 /* Basic CSS for apps built with Ionic */
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
@@ -32,7 +31,6 @@
   }
   .w500{
     width: 500px;
-    align: center;
   }
   
   .h100{
@@ -49,10 +47,7 @@
     background-color:  #087BFF;
     color: white;
   }
-  .txtcenter{
-    text-align: center;
-    margin-top: 50px;
-  }
+  
   .txttitle{
     font-size: 30px;
     color: #087BFF;
@@ -62,5 +57,22 @@
   }
   .headw{
     max-height:  40px;
-    
   }
+  .txtcenter{
+    text-align: center;
+    margin-top: 50px;
+  }
+  .txtcenter1{
+    text-align: center;
+    // margin-top: 30px;
+  }
+ 
+.bg{
+  background : white;
+}
+.fontcolor{
+  color: rgb(241, 182, 92);
+}
+.fbold{
+  font-weight: bold;
+}
